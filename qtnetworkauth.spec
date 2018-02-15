@@ -4,7 +4,7 @@
 #
 Name     : qtnetworkauth
 Version  : 5.10.0
-Release  : 1
+Release  : 2
 URL      : http://download.qt.io/official_releases/qt/5.10/5.10.0/submodules/qtnetworkauth-everywhere-src-5.10.0.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.10/5.10.0/submodules/qtnetworkauth-everywhere-src-5.10.0.tar.xz
 Summary  : No detailed summary available
@@ -47,7 +47,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-`pkg-config --variable=host_bins Qt5Core $(sed -n '/MODULE_VERSION */s///p' .qmake.conf 2>/dev/null)`/qmake --
+qmake QMAKE_CFLAGS="$CFLAGS" QMAKE_CXXFLAGS="$CXXFLAGS" QMAKE_LFLAGS="$LDFLAGS" \
+    QMAKE_CFLAGS_RELEASE= QMAKE_CXXFLAGS_RELEASE=
 test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
