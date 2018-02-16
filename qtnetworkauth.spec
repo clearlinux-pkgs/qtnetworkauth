@@ -4,7 +4,7 @@
 #
 Name     : qtnetworkauth
 Version  : 5.10.0
-Release  : 2
+Release  : 3
 URL      : http://download.qt.io/official_releases/qt/5.10/5.10.0/submodules/qtnetworkauth-everywhere-src-5.10.0.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.10/5.10.0/submodules/qtnetworkauth-everywhere-src-5.10.0.tar.xz
 Summary  : No detailed summary available
