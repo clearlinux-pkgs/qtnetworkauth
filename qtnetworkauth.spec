@@ -4,7 +4,7 @@
 #
 Name     : qtnetworkauth
 Version  : 5.15.2
-Release  : 23
+Release  : 24
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtnetworkauth-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtnetworkauth-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
@@ -18,6 +18,7 @@ BuildRequires : pkgconfig(Qt5Core)
 BuildRequires : pkgconfig(Qt5Network)
 BuildRequires : pkgconfig(Qt5Test)
 BuildRequires : pkgconfig(Qt5Widgets)
+Patch1: qtnetworkauth-stable-branch.patch
 
 %description
 No detailed description available
@@ -62,6 +63,7 @@ license components for the qtnetworkauth package.
 %prep
 %setup -q -n qtnetworkauth-everywhere-src-5.15.2
 cd %{_builddir}/qtnetworkauth-everywhere-src-5.15.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -74,12 +76,12 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1630804667
+export SOURCE_DATE_EPOCH=1662656695
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtnetworkauth
-cp %{_builddir}/qtnetworkauth-everywhere-src-5.15.2/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtnetworkauth/61907422fefcd2313a9b570c31d203a6dbebd333
-cp %{_builddir}/qtnetworkauth-everywhere-src-5.15.2/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtnetworkauth/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/qtnetworkauth-everywhere-src-5.15.2/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtnetworkauth/e93757aefa405f2c9a8a55e780ae9c39542dfc3a
+cp %{_builddir}/qtnetworkauth-everywhere-src-%{version}/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtnetworkauth/61907422fefcd2313a9b570c31d203a6dbebd333 || :
+cp %{_builddir}/qtnetworkauth-everywhere-src-%{version}/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtnetworkauth/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/qtnetworkauth-everywhere-src-%{version}/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtnetworkauth/e93757aefa405f2c9a8a55e780ae9c39542dfc3a || :
 %make_install
 
 %files
