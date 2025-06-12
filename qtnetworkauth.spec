@@ -6,10 +6,10 @@
 # autospec commit: 6aaa12f
 #
 Name     : qtnetworkauth
-Version  : 5.15.2
-Release  : 26
-URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtnetworkauth-everywhere-src-5.15.2.tar.xz
-Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtnetworkauth-everywhere-src-5.15.2.tar.xz
+Version  : 5.15.17
+Release  : 27
+URL      : https://download.qt.io/official_releases/qt/5.15/5.15.17/submodules/qtnetworkauth-everywhere-opensource-src-5.15.17.tar.xz
+Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.17/submodules/qtnetworkauth-everywhere-opensource-src-5.15.17.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.3 GPL-3.0
@@ -64,8 +64,8 @@ license components for the qtnetworkauth package.
 
 
 %prep
-%setup -q -n qtnetworkauth-everywhere-src-5.15.2
-cd %{_builddir}/qtnetworkauth-everywhere-src-5.15.2
+%setup -q -n qtnetworkauth-everywhere-src-5.15.17
+cd %{_builddir}/qtnetworkauth-everywhere-src-5.15.17
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -106,7 +106,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1748646133
+export SOURCE_DATE_EPOCH=1749744120
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtnetworkauth
 cp %{_builddir}/qtnetworkauth-everywhere-src-%{version}/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtnetworkauth/61907422fefcd2313a9b570c31d203a6dbebd333 || :
@@ -121,13 +121,13 @@ GOAMD64=v2
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qabstractoauth2_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qabstractoauth_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qabstractoauthreplyhandler_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qoauth1_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qoauth1signature_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qoauth2authorizationcodeflow_p.h
-/usr/include/qt5/QtNetworkAuth/5.15.2/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qabstractoauth2_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qabstractoauth_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qabstractoauthreplyhandler_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qoauth1_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qoauth1signature_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qoauth2authorizationcodeflow_p.h
+/usr/include/qt5/QtNetworkAuth/5.15.17/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
 /usr/include/qt5/QtNetworkAuth/QAbstractOAuth
 /usr/include/qt5/QtNetworkAuth/QAbstractOAuth2
 /usr/include/qt5/QtNetworkAuth/QAbstractOAuthReplyHandler
@@ -178,7 +178,7 @@ GOAMD64=v2
 %defattr(-,root,root,-)
 /usr/lib64/libQt5NetworkAuth.so.5
 /usr/lib64/libQt5NetworkAuth.so.5.15
-/usr/lib64/libQt5NetworkAuth.so.5.15.2
+/usr/lib64/libQt5NetworkAuth.so.5.15.17
 
 %files license
 %defattr(0644,root,root,0755)
